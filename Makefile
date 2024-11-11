@@ -69,3 +69,9 @@ verify: check-tox ## Run linting, typing, and formatting checks via tox
 .PHONY: validate-pipelines
 validate-pipelines: ## Validate all pipeline files against schema
 	tox -e validate-pipelines
+
+##@ Development
+
+.PHONY: tests
+tests: check-tox ## Run unit tests and see coverage
+	tox -e py3-unitcov
